@@ -25,11 +25,11 @@ if ($data) {
 </head>
 <body>
 
-<div class="container py-5">
+<div class="container py-4">
     <div class="row">
-        <div class="col-12 mb-4">
-            <h1 class="display-5 fw-bold">CV Builder ATS</h1>
-            <p class="lead text-muted">Crea curriculums profesionales compatibles con ATS</p>
+        <div class="col-12 app-header">
+            <h1>CV Builder ATS</h1>
+            <p class="lead">Crea curriculums profesionales compatibles con ATS</p>
         </div>
     </div>
 
@@ -91,7 +91,7 @@ if ($data) {
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary mb-3" id="add-experiencia">+ Agregar experiencia</button>
+                        <button type="button" class="btn-add mb-3" id="add-experiencia">+ Agregar experiencia</button>
 
                         <h5 class="section-label">Educacion</h5>
                         <div id="educacion-container">
@@ -112,7 +112,7 @@ if ($data) {
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary mb-3" id="add-educacion">+ Agregar educacion</button>
+                        <button type="button" class="btn-add mb-3" id="add-educacion">+ Agregar educacion</button>
 
                         <h5 class="section-label">Habilidades</h5>
                         <div class="mb-3">
@@ -163,7 +163,7 @@ if ($data) {
                     <h5 class="mb-0">Vista Previa</h5>
                 </div>
                 <div class="card-body p-4 preview-container" id="preview-container">
-                    <div class="text-muted text-center py-5">
+                    <div class="default-preview">
                         Completa el formulario para ver la vista previa.
                     </div>
                 </div>
@@ -297,7 +297,7 @@ function getFormData() {
 function updatePreview() {
     const data = getFormData();
     if (!data.nombre) {
-        document.getElementById('preview-container').innerHTML = '<div class="text-muted text-center py-5">Completa el formulario para ver la vista previa.</div>';
+        document.getElementById('preview-container').innerHTML = '<div class="default-preview">Completa el formulario para ver la vista previa.</div>';
         return;
     }
 

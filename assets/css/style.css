@@ -1,56 +1,230 @@
 body {
-    background-color: #f8f9fa;
-    color: #212529;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    color: #1a1a1a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+::selection {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.app-header {
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.app-header h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.app-header .lead {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
 }
 
 .card {
-    border: 1px solid #dee2e6;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: none;
+    border-radius: 12px;
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 4px 12px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 8px 24px rgba(0,0,0,0.08);
+}
+
+.card-header {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 1.25rem;
+}
+
+.card-header h5 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+}
+
+.card-body {
+    padding: 1.5rem;
 }
 
 .section-label {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #6c757d;
-    border-bottom: 2px solid #000;
-    padding-bottom: 6px;
-    margin-bottom: 16px;
-    margin-top: 20px;
+    letter-spacing: 1px;
+    color: #888;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    margin-top: 1.75rem;
 }
 
 .section-label:first-of-type {
     margin-top: 0;
 }
 
-.form-control:focus {
-    border-color: #000;
-    box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.1);
+.form-control, .form-select {
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #fafafa;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 3px rgba(26,26,26,0.08);
+    background: #fff;
+}
+
+.form-control::placeholder {
+    color: #bbb;
+    font-size: 0.85rem;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.btn {
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.55rem 1.25rem;
+    transition: all 0.2s ease;
 }
 
 .btn-dark {
-    background-color: #000;
-    border-color: #000;
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    color: #fff;
 }
 
 .btn-dark:hover {
-    background-color: #333;
-    border-color: #333;
+    background-color: #000;
+    border-color: #000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-dark:active {
+    transform: translateY(0);
+}
+
+.btn-outline-secondary {
+    border-color: #ccc;
+    color: #555;
 }
 
 .btn-outline-secondary:hover {
-    background-color: #000;
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
     color: #fff;
-    border-color: #000;
+}
+
+.btn-outline-danger {
+    border-color: #e8d0d0;
+    color: #c0392b;
+}
+
+.btn-outline-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+    color: #fff;
+}
+
+.btn-sm {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.78rem;
+    border-radius: 6px;
+}
+
+.experiencia-entry,
+.educacion-entry {
+    background: #fafafa;
+    border: 1.5px solid #eee !important;
+    border-radius: 10px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.experiencia-entry:hover,
+.educacion-entry:hover {
+    border-color: #ccc !important;
+    background: #fff;
+}
+
+.experiencia-entry .remove-entry,
+.educacion-entry .remove-entry {
+    opacity: 0.7;
+}
+
+.experiencia-entry .remove-entry:hover,
+.educacion-entry .remove-entry:hover {
+    opacity: 1;
+}
+
+.btn-add {
+    border: 1.5px dashed #ccc;
+    background: transparent;
+    color: #888;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-add:hover {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+    background: rgba(26,26,26,0.03);
 }
 
 .preview-container {
-    min-height: 300px;
+    min-height: 280px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.preview-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.preview-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.preview-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
 }
 
 .list-group-item {
     border-left: none;
     border-right: none;
+    border-color: #f0f0f0;
+    padding: 1rem 1.25rem;
+    transition: background 0.15s ease;
+}
+
+.list-group-item:hover {
+    background: #fafafa;
 }
 
 .list-group-item:first-child {
@@ -61,58 +235,99 @@ body {
     border-bottom: none;
 }
 
+.list-group-item strong {
+    font-size: 0.9rem;
+    color: #1a1a1a;
+}
+
+.list-group-item small {
+    font-size: 0.78rem;
+}
+
+.btn-group .btn {
+    border-radius: 6px !important;
+    margin-left: 4px;
+}
+
+.btn-group .btn:first-child {
+    margin-left: 0;
+}
+
+.default-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #bbb;
+    font-size: 0.85rem;
+}
+
+.default-preview::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
 /* ATS Template Styles */
 .ats-cv {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
     font-size: 11pt;
-    line-height: 1.5;
-    color: #000;
+    line-height: 1.6;
+    color: #1a1a1a;
 }
 
 .ats-header {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #000;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2.5px solid #1a1a1a;
 }
 
 .ats-name {
-    font-size: 22pt;
-    font-weight: 700;
-    margin: 0 0 5px 0;
+    font-size: 20pt;
+    font-weight: 800;
+    margin: 0 0 6px 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .ats-contact {
-    font-size: 10pt;
-    color: #333;
-    margin: 3px 0;
+    font-size: 9.5pt;
+    color: #555;
+    margin: 2px 0;
 }
 
 .ats-links {
-    font-size: 10pt;
-    margin: 3px 0;
+    font-size: 9.5pt;
+    margin: 2px 0;
 }
 
 .ats-link {
-    color: #000;
+    color: #1a1a1a;
 }
 
 .ats-section {
-    margin-bottom: 18px;
+    margin-bottom: 1.25rem;
 }
 
 .ats-section-title {
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: 700;
     text-transform: uppercase;
-    border-bottom: 1px solid #000;
+    letter-spacing: 1px;
+    border-bottom: 1.5px solid #1a1a1a;
     padding-bottom: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
 }
 
 .ats-entry {
-    margin-bottom: 12px;
+    margin-bottom: 0.85rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid #eee;
 }
 
 .ats-entry-header {
@@ -120,13 +335,24 @@ body {
 }
 
 .ats-date {
-    font-size: 10pt;
-    color: #555;
+    font-size: 9.5pt;
+    color: #777;
     margin: 2px 0;
+    font-style: italic;
 }
 
 .ats-text {
     font-size: 10pt;
     margin: 4px 0 0 0;
-    color: #333;
+    color: #444;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .app-header h1 {
+        font-size: 1.4rem;
+    }
+    .card-body {
+        padding: 1.25rem;
+    }
 }
