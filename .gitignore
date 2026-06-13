@@ -1,0 +1,5 @@
+vendor/
+src/storage/database.sqlite
+composer.lock
+composer.json
+.DS_Store

@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: cv-builder
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./assets:/var/www/html/assets
+    working_dir: /var/www/html
